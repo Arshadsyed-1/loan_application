@@ -84,10 +84,14 @@ if st.button("Check Loan Approval"):
     "loan_approved": bool(approved)
 }
 
-try:
-    response = supabase.table("loan_app").insert(data).execute()
+    try:
+        response = supabase.table("loan_app").insert(data).execute()
 
-    st.success("Application saved successfully!")
+    # Show prediction
+        if approved:
+            st.success("✅ LOAN APPROVED")
+        else:
+            st.error("❌ LOAN REJECTED")
 
-except Exception as e:
-    st.error(f"Supabase Error: {e}")
+    except Exception as e:
+        st.error(f"Database Error: {e}")
