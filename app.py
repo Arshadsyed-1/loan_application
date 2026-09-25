@@ -30,7 +30,6 @@ employment = st.selectbox(
 )
 
 existing_loans_input = st.text_input("Existing Loans")
-dependents_input = st.text_input("Dependents")
 
 if st.button("Check Loan Approval"):
 
@@ -41,7 +40,6 @@ if st.button("Check Loan Approval"):
         or not loan_amount_input
         or not loan_term_input
         or not existing_loans_input
-        or not dependents_input
     ):
         st.warning("Please enter all details.")
 
@@ -52,7 +50,6 @@ if st.button("Check Loan Approval"):
         loan_amount = int(loan_amount_input)
         loan_term = int(loan_term_input)
         existing_loans = int(existing_loans_input)
-        dependents = int(dependents_input)
 
         new_applicant = pd.DataFrame({
             "Age": [age],
@@ -61,8 +58,7 @@ if st.button("Check Loan Approval"):
             "Loan_Amount": [loan_amount],
             "Loan_Term": [loan_term],
             "Employment_Type": [employment],
-            "Existing_Loans": [existing_loans],
-            "Dependents": [dependents]
+            "Existing_Loans": [existing_loans]
         })
 
         result = model.predict(new_applicant)
@@ -77,7 +73,6 @@ if st.button("Check Loan Approval"):
             "loan_term": loan_term,
             "employment_type": employment,
             "existing_loans": existing_loans,
-            "dependents": dependents,
             "loan_approved": approved
         }
 
