@@ -9,8 +9,8 @@ model = joblib.load("model.pkl")
 
 from supabase import create_client
 
-SUPABASE_URL = "YOUR_SUPABASE_URL"
-SUPABASE_KEY = "YOUR_SUPABASE_KEY"
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
 supabase = create_client(
     SUPABASE_URL,
