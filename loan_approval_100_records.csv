@@ -1,0 +1,101 @@
+Age,Income,Credit_Score,Loan_Amount,Loan_Term,Employment_Type,Education,Existing_Loans,Dependents,Loan_Approved
+28,24556,690,306787,24,Salaried,Graduate,4,0,0
+58,128604,566,81244,12,Salaried,Graduate,4,4,0
+22,70124,829,489898,24,Self-employed,Not Graduate,0,1,1
+48,107194,692,213032,24,Self-employed,Graduate,0,3,1
+27,112104,726,683052,36,Salaried,Not Graduate,4,0,1
+45,38656,832,357419,60,Self-employed,Graduate,0,0,1
+35,93861,590,946865,24,Salaried,Not Graduate,2,3,0
+44,60638,739,422528,24,Self-employed,Graduate,4,1,1
+55,82175,633,534714,48,Self-employed,Graduate,2,0,1
+35,26414,711,470651,36,Salaried,Graduate,4,2,0
+34,148870,752,977657,48,Salaried,Not Graduate,1,1,1
+56,86876,849,499245,60,Self-employed,Not Graduate,1,1,1
+53,147372,596,842495,12,Salaried,Graduate,1,3,1
+59,34653,747,450156,60,Self-employed,Not Graduate,4,0,0
+28,87946,724,166970,36,Self-employed,Graduate,3,0,1
+37,149225,641,582342,12,Self-employed,Graduate,1,2,1
+31,18149,715,562340,12,Salaried,Not Graduate,2,1,0
+24,81143,840,132582,12,Self-employed,Graduate,4,1,1
+29,142592,831,223148,36,Self-employed,Graduate,4,1,1
+40,122593,741,509381,60,Self-employed,Graduate,1,1,1
+25,106627,560,666886,60,Salaried,Graduate,0,0,1
+24,78015,584,999401,12,Self-employed,Graduate,4,1,0
+38,145248,659,615427,24,Self-employed,Graduate,3,3,0
+33,42726,599,740993,48,Self-employed,Not Graduate,3,3,0
+24,43799,581,472179,36,Salaried,Graduate,1,1,0
+55,135601,621,492374,24,Self-employed,Not Graduate,1,0,1
+49,43666,575,733823,60,Salaried,Graduate,1,1,0
+47,145307,796,274130,48,Salaried,Graduate,3,0,1
+45,87521,782,349105,48,Self-employed,Graduate,1,2,1
+34,33331,846,821476,60,Salaried,Not Graduate,0,0,1
+58,142987,807,944141,60,Salaried,Graduate,4,0,1
+32,35962,584,758011,24,Self-employed,Graduate,4,1,0
+58,28418,591,489589,60,Self-employed,Not Graduate,1,2,0
+36,87629,752,187235,36,Self-employed,Not Graduate,0,0,1
+50,44209,587,613750,24,Self-employed,Graduate,2,0,0
+36,114869,695,215409,48,Self-employed,Graduate,4,2,1
+27,53203,685,171035,12,Salaried,Not Graduate,2,4,0
+34,107884,654,770892,36,Self-employed,Not Graduate,0,0,1
+48,90530,572,53717,36,Salaried,Not Graduate,1,3,1
+56,130115,837,60139,12,Salaried,Graduate,4,0,1
+44,56821,770,183636,12,Self-employed,Not Graduate,0,2,1
+34,83412,602,420858,60,Self-employed,Graduate,1,1,1
+32,126080,562,238073,36,Self-employed,Graduate,2,1,1
+27,118281,569,950300,48,Salaried,Graduate,3,2,1
+40,77662,664,74813,24,Self-employed,Not Graduate,2,0,1
+38,110050,810,469093,60,Self-employed,Graduate,0,2,1
+32,87590,569,163668,60,Self-employed,Not Graduate,2,3,0
+59,48315,747,993199,60,Salaried,Not Graduate,0,3,0
+21,69651,736,502248,12,Self-employed,Not Graduate,0,2,1
+53,99077,759,392027,48,Self-employed,Graduate,1,3,1
+45,63620,841,365568,48,Salaried,Not Graduate,2,1,1
+48,102475,788,513246,48,Salaried,Not Graduate,1,0,1
+39,105867,597,908179,24,Self-employed,Graduate,1,1,1
+22,30114,675,548216,60,Salaried,Not Graduate,3,4,0
+33,118657,803,469066,24,Salaried,Graduate,0,3,1
+35,64107,815,537115,12,Salaried,Graduate,3,1,1
+50,101177,776,692412,60,Self-employed,Not Graduate,1,3,1
+49,85945,676,930660,36,Self-employed,Graduate,2,3,0
+25,92901,670,334913,36,Self-employed,Graduate,1,1,1
+35,118410,628,790734,24,Salaried,Not Graduate,3,2,0
+55,140139,762,115290,24,Self-employed,Not Graduate,4,0,1
+57,117714,794,56182,36,Self-employed,Not Graduate,3,4,0
+55,75812,799,280080,36,Self-employed,Not Graduate,0,3,1
+42,123989,634,931334,48,Salaried,Graduate,3,4,0
+57,25104,592,723971,48,Salaried,Not Graduate,1,0,0
+37,117379,717,271941,48,Self-employed,Not Graduate,3,2,1
+47,84131,591,543152,12,Salaried,Not Graduate,1,0,1
+23,26134,676,259044,12,Salaried,Graduate,1,3,0
+28,75138,788,783442,36,Self-employed,Graduate,4,4,1
+28,60930,709,163349,60,Salaried,Not Graduate,4,3,1
+46,69990,588,670859,24,Salaried,Not Graduate,4,0,0
+57,28766,727,608623,48,Self-employed,Graduate,4,2,0
+21,128115,800,160665,48,Self-employed,Not Graduate,1,3,1
+32,88800,825,862270,48,Self-employed,Not Graduate,4,2,1
+41,82355,594,342477,48,Salaried,Not Graduate,4,4,0
+45,106184,564,568317,36,Salaried,Not Graduate,1,2,1
+37,107217,693,973082,60,Self-employed,Graduate,4,1,1
+26,81270,758,562311,60,Salaried,Not Graduate,3,3,1
+22,42393,700,282360,48,Salaried,Not Graduate,4,2,1
+51,108113,767,832169,60,Self-employed,Not Graduate,3,2,1
+40,83903,668,176516,24,Self-employed,Graduate,4,1,1
+33,74723,797,339930,60,Self-employed,Graduate,1,2,1
+35,112602,641,366950,12,Salaried,Not Graduate,0,0,1
+56,94581,614,718854,48,Salaried,Graduate,4,2,0
+51,143492,775,407256,24,Salaried,Not Graduate,3,0,1
+25,123043,801,127680,60,Salaried,Graduate,1,4,1
+40,40329,677,174205,60,Self-employed,Graduate,4,3,0
+49,134056,702,951950,60,Self-employed,Not Graduate,4,4,1
+24,44013,656,705900,24,Self-employed,Graduate,1,1,0
+32,37677,630,52805,48,Self-employed,Not Graduate,2,0,0
+35,93524,694,787135,48,Salaried,Graduate,2,4,1
+33,129447,608,621015,24,Salaried,Not Graduate,1,0,1
+24,61495,707,673948,60,Self-employed,Not Graduate,0,3,1
+40,123515,689,574783,60,Self-employed,Not Graduate,0,4,1
+23,131253,715,683039,36,Salaried,Graduate,1,4,1
+58,23438,687,654238,12,Salaried,Not Graduate,4,3,0
+38,65576,849,507058,48,Salaried,Not Graduate,2,3,1
+42,102163,603,949398,24,Self-employed,Not Graduate,3,2,0
+46,27619,782,142337,36,Self-employed,Not Graduate,0,3,1
+53,18301,827,534417,48,Salaried,Graduate,4,2,0
