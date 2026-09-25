@@ -71,21 +71,23 @@ if st.button("Check Loan Approval"):
 
     # Convert prediction to True/False
     approved = bool(result[0] == 1)
-    
-    # Save to Supabase
-    supabase.table("loan_app").insert({
-        "age": age,
-        "income": income,
-        "credit_score": credit_score,
-        "loan_amount": loan_amount,
-        "loan_term": loan_term,
-        "employment_type": employment,
-        "existing_loans": existing_loans,
-        "loan_approved": approved
-    }).execute()
 
-    # Display result
-    if approved:
-        st.success("✅ Loan Approved")
-    else:
-        st.error("❌ Loan Not Approved")
+    # Save to Supabase
+    data = {
+    "age": int(age),
+    "income": int(income),
+    "credit_score": int(credit_score),
+    "loan_amount": int(loan_amount),
+    "loan_term": int(loan_term),
+    "employment_type": str(employment),
+    "existing_loans": int(existing_loans),
+    "loan_approved": bool(approved)
+}
+
+try:
+    response = supabase.table("loan_app").insert(data).execute()
+
+    st.success("Application saved successfully!")
+
+except Exception as e:
+    st.error(f"Supabase Error: {e}")
