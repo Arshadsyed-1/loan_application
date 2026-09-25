@@ -28,29 +28,29 @@ st.title("💰 Loan Approval Prediction")
 st.write("Enter applicant details")
 
 
-age = st.number_input("Age")
+age = int(st.text_input("Age"))
 
-income = st.number_input("Income")
+income = int(st.text_input("Income"))
 
-credit_score = st.number_input(
+credit_score = int(st.text_input(
     "Credit Score"
-)
+))
 
-loan_amount = st.number_input(
+loan_amount = int(st.number_input(
     "Loan Amount"
-)
+))
 
-loan_term = st.number_input(
+loan_term = int(st.number_input(
     "Loan Term (Months)"
-)
+))
 
 employment = st.selectbox(
     "Employment Type",
     [" ","Salaried", "Self-employed"]
 )
 
-existing_loans = st.number_input(
-    "Existing Loans")
+existing_loans = int(st.number_input(
+    "Existing Loans"))
 
 
 
