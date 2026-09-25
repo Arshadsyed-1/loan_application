@@ -26,7 +26,7 @@ loan_term_input = st.text_input("Loan Term")
 
 employment = st.selectbox(
     "Employment Type",
-    ["Salaried", "Self-employed"]
+    ["","Salaried", "Self-employed"]
 )
 
 existing_loans_input = st.text_input("Existing Loans")
