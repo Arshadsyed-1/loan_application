@@ -70,8 +70,8 @@ if st.button("Check Loan Approval"):
     result = model.predict(new_applicant)
 
     # Convert prediction to True/False
-    approved = result[0] == 1
-
+    approved = bool(result[0] == 1)
+    
     # Save to Supabase
     supabase.table("loan_app").insert({
         "age": age,
