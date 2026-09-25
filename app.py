@@ -1,97 +1,93 @@
 import streamlit as st
 import pandas as pd
 import joblib
-
-
-# Load model
-model = joblib.load("model.pkl")
-
-
 from supabase import create_client
-
-SUPABASE_URL = st.secrets["SUPABASE_URL"]
-SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
-
-supabase = create_client(
-    SUPABASE_URL,
-    SUPABASE_KEY
-)
-
 
 st.set_page_config(
     page_title="Loan Approval",
     page_icon="💰"
 )
 
+model = joblib.load("model.pkl")
+
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
+
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 st.title("💰 Loan Approval Prediction")
 st.write("Enter applicant details")
 
-
-age = int(st.text_input("Age"))
-
-income = int(st.text_input("Income"))
-
-credit_score = int(st.text_input(
-    "Credit Score"
-))
-
-loan_amount = int(st.number_input(
-    "Loan Amount"
-))
-
-loan_term = int(st.number_input(
-    "Loan Term (Months)"
-))
+age_input = st.text_input("Age")
+income_input = st.text_input("Income")
+credit_input = st.text_input("Credit Score")
+loan_amount_input = st.text_input("Loan Amount")
+loan_term_input = st.text_input("Loan Term")
 
 employment = st.selectbox(
     "Employment Type",
-    [" ","Salaried", "Self-employed"]
+    ["Salaried", "Self-employed"]
 )
 
-existing_loans = int(st.number_input(
-    "Existing Loans"))
-
-
+existing_loans_input = st.text_input("Existing Loans")
+dependents_input = st.text_input("Dependents")
 
 if st.button("Check Loan Approval"):
 
-    new_applicant = pd.DataFrame({
-        "Age": [age],
-        "Income": [income],
-        "Credit_Score": [credit_score],
-        "Loan_Amount": [loan_amount],
-        "Loan_Term": [loan_term],
-        "Employment_Type": [employment],
-        "Existing_Loans": [existing_loans],
-    })
+    if (
+        not age_input
+        or not income_input
+        or not credit_input
+        or not loan_amount_input
+        or not loan_term_input
+        or not existing_loans_input
+        or not dependents_input
+    ):
+        st.warning("Please enter all details.")
 
-    # Model prediction
-    result = model.predict(new_applicant)
+    else:
+        age = int(age_input)
+        income = int(income_input)
+        credit_score = int(credit_input)
+        loan_amount = int(loan_amount_input)
+        loan_term = int(loan_term_input)
+        existing_loans = int(existing_loans_input)
+        dependents = int(dependents_input)
 
-    # Convert prediction to True/False
-    approved = bool(result[0] == 1)
+        new_applicant = pd.DataFrame({
+            "Age": [age],
+            "Income": [income],
+            "Credit_Score": [credit_score],
+            "Loan_Amount": [loan_amount],
+            "Loan_Term": [loan_term],
+            "Employment_Type": [employment],
+            "Existing_Loans": [existing_loans],
+            "Dependents": [dependents]
+        })
 
-    # Save to Supabase
-    data = {
-    "age": int(age),
-    "income": int(income),
-    "credit_score": int(credit_score),
-    "loan_amount": int(loan_amount),
-    "loan_term": int(loan_term),
-    "employment_type": str(employment),
-    "existing_loans": int(existing_loans),
-    "loan_approved": bool(approved)
-}
+        result = model.predict(new_applicant)
 
-    try:
-        response = supabase.table("loan_app").insert(data).execute()
+        approved = bool(result[0] == 1)
 
-    # Show prediction
-        if approved:
-            st.success("✅ LOAN APPROVED")
-        else:
-            st.error("❌ LOAN REJECTED")
+        data = {
+            "age": age,
+            "income": income,
+            "credit_score": credit_score,
+            "loan_amount": loan_amount,
+            "loan_term": loan_term,
+            "employment_type": employment,
+            "existing_loans": existing_loans,
+            "dependents": dependents,
+            "loan_approved": approved
+        }
 
-    except Exception as e:
-        st.error(f"Database Error: {e}")
+        try:
+            supabase.table("loan_app").insert(data).execute()
+
+            if approved:
+                st.success("✅ LOAN APPROVED")
+            else:
+                st.error("❌ LOAN REJECTED")
+
+        except Exception as e:
+            st.error(f"Database Error: {e}") 
