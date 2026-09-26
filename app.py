@@ -13,11 +13,15 @@ model = joblib.load("model.pkl")
 SUPABASE_URL = st.secrets["SUPABASE_URL"]
 SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
-supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+supabase = create_client(
+    SUPABASE_URL,
+    SUPABASE_KEY
+)
 
 st.title("💰 Loan Approval Prediction")
 st.write("Enter applicant details")
 
+name = st.text_input("Enter Your Name")
 age_input = st.text_input("Age")
 income_input = st.text_input("Income")
 credit_input = st.text_input("Credit Score")
@@ -26,7 +30,7 @@ loan_term_input = st.text_input("Loan Term")
 
 employment = st.selectbox(
     "Employment Type",
-    ["","Salaried", "Self-employed"]
+    ["", "Salaried", "Self-employed"]
 )
 
 existing_loans_input = st.text_input("Existing Loans")
@@ -34,11 +38,13 @@ existing_loans_input = st.text_input("Existing Loans")
 if st.button("Check Loan Approval"):
 
     if (
-        not age_input
+        not name
+        or not age_input
         or not income_input
         or not credit_input
         or not loan_amount_input
         or not loan_term_input
+        or not employment
         or not existing_loans_input
     ):
         st.warning("Please enter all details.")
@@ -66,6 +72,7 @@ if st.button("Check Loan Approval"):
         approved = bool(result[0] == 1)
 
         data = {
+            "name": name,
             "age": age,
             "income": income,
             "credit_score": credit_score,
@@ -85,4 +92,4 @@ if st.button("Check Loan Approval"):
                 st.error("❌ LOAN REJECTED")
 
         except Exception as e:
-            st.error(f"Database Error: {e}") 
+            st.error(f"Database Error: {e}")

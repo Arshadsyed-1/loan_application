@@ -6,9 +6,6 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
-
-
-
 # Load data
 df = pd.read_csv("loan_approval_100_records.csv")
 
