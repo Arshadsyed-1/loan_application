@@ -144,8 +144,7 @@ The model uses the following features:
 | `Loan_Amount`     | Requested loan amount    | Numerical   |
 | `Loan_Term`       | Loan repayment term      | Numerical   |
 | `Employment_Type` | Employment category      | Categorical |
-| `Existing_Loans`  | Number of existing loans | Numerical   |
-| `Dependents`      | Number of dependents     | Numerical   |
+| `Existing_Loans`  | Number of existing loans | Numerical |
 
 ### 🎯 Target
 
@@ -324,7 +323,6 @@ loan_amount
 loan_term
 employment_type
 existing_loans
-dependents
 loan_approved
 ```
 
